@@ -3,10 +3,10 @@ name: Sails Test Workflow
 on:
   push:
     branches:
-      - develop
+      - main
   pull_request:
     branches:
-      - develop
+      - main
 
 jobs:
   checkout-code:
@@ -23,7 +23,24 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: npm new
+        run: npm install
+
+  build:
+    needs: checkout-code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install -g sails
+        run: npm install -g sails
+
+      - name: build
+        run: sails www --prod
+
 
   run-tests:
     needs: checkout-code

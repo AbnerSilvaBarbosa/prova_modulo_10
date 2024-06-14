@@ -1,32 +1,32 @@
-const { v4: uuidv4 } = require("uuid");
+const { v4: uuidv4 } = require('uuid');
 module.exports = {
   attributes: {
     id: {
-      type: "string",
-      columnName: "id",
+      type: 'string',
+      columnName: 'id',
       required: true,
       unique: true,
     },
     username: {
-      type: "string",
+      type: 'string',
       required: true,
     },
     email: {
-      type: "string",
+      type: 'string',
       required: true,
       unique: true,
       isEmail: true,
     },
     bio: {
-      type: "string",
+      type: 'string',
       maxLength: 300,
     },
     profile_photo: {
-      type: "string",
+      type: 'string',
       allowNull: true,
     },
     password: {
-      type: "string",
+      type: 'string',
       required: true,
     },
   },

@@ -1,19 +1,19 @@
 module.exports = {
   attributes: {
     name: {
-      type: "string",
+      type: 'string',
       required: true,
     },
     photo: {
-      type: "string",
+      type: 'string',
       required: true,
     },
     favoriteToy: {
-      type: "string",
+      type: 'string',
       required: true,
     },
     owner: {
-      model: "Users",
+      model: 'Users',
       required: true,
     },
   },
